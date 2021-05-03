@@ -1,0 +1,16 @@
+version: '3'
+volumes:
+  postgres_data_todo:
+    driver: local
+services:
+  db:
+    container_name: todo_db
+    image: postgres
+    volumes:
+      - postgres_data_todo:/var/lib/postgresql/data
+      - ./db/initdb.d/create-database.sql:/docker-entrypoint-initdb.d/create-database.sql
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: pass-sword
+    ports:
+      - 5432:5432

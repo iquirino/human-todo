@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "lib": ["es2015", "dom"],
+    "paths": {
+      "@auth/*": ["src/auth/*"],
+      "@project/*": ["src/project/*"],
+      "@task/*": ["src/task/*"],
+      "@shared/*": ["src/shared/*"],
+      "@user/*": ["src/users/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,17 @@
+#MY TODO APP
+
+- Open a terminal
+cd back-end
+docker-compose up
+
+
+- Open a new terminal
+cd back-end
+npm run start:dev
+
+- Open a new terminal
+cd fron-end
+docker build -t todo-app .
+docker run --rm -p 3000:80 todo-app
+
+Browse to: http://localhost:3000/
