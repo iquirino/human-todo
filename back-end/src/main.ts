@@ -12,9 +12,8 @@ const port = process.env.PORT;
 
 async function bootstrap() {
   const app = await NestFactory.create(
-    AppModule.forRoot(await getDbConnectionOptions(process.env.NODE_ENV)),
+    AppModule.forRoot(await getDbConnectionOptions()),
     {
-      // logger: Boolean(process.env.ENABLELOGGING),
       logger: console,
     },
   );

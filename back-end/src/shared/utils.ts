@@ -11,9 +11,7 @@ export const toPromise = <T>(data: T): Promise<T> => {
 export const getDbConnectionOptions = async (
   connectionName: string = 'default',
 ) => {
-  const options = await getConnectionOptions(
-    process.env.NODE_ENV || process.env.TYPEORM_NAME || 'default',
-  );
+  const options = await getConnectionOptions(connectionName);
   return {
     ...options,
     name: connectionName,
@@ -26,7 +24,8 @@ export const getDbConnection = async (connectionName: string = 'default') => {
 
 export const runDbMigrations = async (connectionName: string = 'default') => {
   const conn = await getDbConnection(connectionName);
-  await conn.runMigrations();
+  await conn.synchronize(false);
+  //await conn.runMigrations();
 };
 
 export const comparePasswords = async (userPassword, currentPassword) => {

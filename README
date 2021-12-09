@@ -10,7 +10,7 @@ cd back-end
 npm run start:dev
 
 - Open a new terminal
-cd fron-end
+cd front-end
 docker build -t todo-app .
 docker run --rm -p 3000:80 todo-app
 

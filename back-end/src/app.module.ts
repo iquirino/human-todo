@@ -17,12 +17,12 @@ export class AppModule {
         ConfigModule.forRoot({
           envFilePath: ['.env'],
         }),
+        TypeOrmModule.forRoot(connOptions),
         AuthModule,
         ProjectModule,
         TaskModule,
         UsersModule,
         CoreModule,
-        TypeOrmModule.forRoot(connOptions),
       ],
     };
   }

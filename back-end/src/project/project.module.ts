@@ -10,10 +10,10 @@ import { TaskModule } from '@task/task.module';
 
 @Module({
   imports: [
+    TypeOrmModule.forFeature([ProjectEntity, UserEntity]),
     UsersModule,
     TaskModule,
     AuthModule,
-    TypeOrmModule.forFeature([ProjectEntity, UserEntity]),
   ],
   exports: [ProjectService],
   controllers: [ProjectController],
